@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head />
       <body
-        className={`${jetBrainsMono.variable} grid h-screen content-start gap-y-8 antialiased transition-all duration-300 ease-in-out`}
+        className={`${jetBrainsMono.variable} grid h-screen content-start antialiased transition-all duration-300 ease-in-out`}
       >
         <ThemeProvider
           attribute="class"

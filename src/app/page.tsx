@@ -8,8 +8,8 @@ import {
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
-      <div className="flex flex-wrap items-center gap-8 border-b-2 border-dashed pb-16">
+    <div className="flex flex-col gap-8">
+      <div className="flex h-184 flex-wrap items-center gap-8 border-b-2 border-dashed">
         <div className="border-foreground h-48 w-48 rounded-full border-2 border-dashed"></div>
         <div>
           <h1 className="text-4xl font-bold">Silvio Cesar</h1>
