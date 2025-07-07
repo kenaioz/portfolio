@@ -36,11 +36,16 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <header className="flex h-16 items-center justify-between px-8 py-4">
-            <h1 className="text-2xl">Kenaioz Portfolio</h1>
+            <h1 className="text-2xl">Kenaioz | Silvio Cesar</h1>
             <ThemeSwitcher />
           </header>
 
           <main className="p-8">{children}</main>
+
+          <footer className="bg-foreground text-background flex items-center justify-between px-8 py-4">
+            <p>Footer</p>
+            <p>Teste</p>
+          </footer>
         </ThemeProvider>
       </body>
     </html>
