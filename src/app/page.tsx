@@ -167,7 +167,7 @@ export default function Home() {
               id="email"
               type="email"
               placeholder="Email para retorno"
-              autoComplete="off"
+              autoComplete="email"
               className="border-foreground w-full border-b-2 p-1.5 focus:outline-0"
             />
           </label>
