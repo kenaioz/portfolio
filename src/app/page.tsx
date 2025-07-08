@@ -8,8 +8,8 @@ import {
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-8">
-      <div className="flex h-184 flex-wrap items-center gap-8 border-b-2 border-dashed">
+    <div className="flex flex-col gap-12">
+      <div className="flex flex-wrap items-center gap-8 border-b-2 border-dashed sm:h-184">
         <div className="border-foreground h-48 w-48 rounded-full border-2 border-dashed"></div>
         <div>
           <h1 className="text-4xl font-bold">Silvio Cesar</h1>
@@ -17,7 +17,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-2 border-b-2 border-dashed py-8">
+      <div className="flex flex-col gap-2 border-b-2 border-dashed pb-12">
         <h2 className="text-2xl font-bold">Sobre Mim</h2>
         <p className="text-pretty">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo cum
@@ -39,7 +39,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="border-b-2 border-dashed py-8">
+      <div className="border-b-2 border-dashed pb-12">
         <h2 className="text-2xl font-bold">Techs</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
@@ -115,7 +115,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-2 border-b-2 border-dashed py-8">
+      <div className="flex flex-col gap-2 border-b-2 border-dashed pb-12">
         <h2 className="text-2xl font-bold">Projetos</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
@@ -149,26 +149,48 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-2 py-8">
-        <h2 className="text-2xl font-bold">Sobre Mim</h2>
-        <p className="text-pretty">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo cum
-          dolore voluptatum dolor pariatur ab commodi exercitationem animi,
-          provident odit libero inventore quisquam fugiat, nostrum ipsum
-          voluptates at similique doloribus?
-        </p>
-        <p className="text-pretty">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
-          placeat reprehenderit repellat aspernatur, voluptate velit harum
-          tenetur omnis atque quo hic quos corrupti dolore, neque accusamus!
-          Iste sed animi iure.
-        </p>
-        <p className="text-pretty">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
-          placeat reprehenderit repellat aspernatur, voluptate velit harum
-          tenetur omnis atque quo hic quos corrupti dolore, neque accusamus!
-          Iste sed animi iure.
-        </p>
+      <div className="flex flex-col gap-2 pb-12">
+        <h2 className="text-2xl font-bold">Contato</h2>
+        <div className="flex w-1/2 flex-col gap-4">
+          <label htmlFor="name">
+            <input
+              id="name"
+              type="text"
+              placeholder="Seu nome"
+              autoComplete="given-name"
+              className="border-foreground w-full border-b-2 p-1.5 focus:outline-0"
+            />
+          </label>
+
+          <label htmlFor="email">
+            <input
+              id="email"
+              type="email"
+              placeholder="Email para retorno"
+              autoComplete="off"
+              className="border-foreground w-full border-b-2 p-1.5 focus:outline-0"
+            />
+          </label>
+
+          <label htmlFor="subject">
+            <input
+              id="subject"
+              type="text"
+              placeholder="Assunto do email"
+              autoComplete="off"
+              className="border-foreground w-full border-b-2 p-1.5 focus:outline-0"
+            />
+          </label>
+
+          <label htmlFor="body">
+            <textarea
+              id="body"
+              placeholder="Corpo do email"
+              autoComplete="off"
+              className="border-foreground h-32 w-full resize-none border-b-2 p-1.5 focus:outline-0"
+            />
+          </label>
+        </div>
       </div>
     </div>
   );
