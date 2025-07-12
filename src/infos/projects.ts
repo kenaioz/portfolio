@@ -20,7 +20,7 @@ const projects: Projects[] = [
     name: "FutSuperstition",
     description:
       "Ferramenta pessoal que uso para acompanhar e registrar minhas superstições com futebol, nele registro as camisas que tenho, os locais que assisto os jogos e no final cadastro o jogo que assisti cruzando essas informações para gerar as combinações mais vitoriosas.",
-    techs: ["React", "Remix", "TailwindCSS"],
+    techs: ["TypeScript", "React", "Remix", "TailwindCSS"],
     links: [
       {
         name: "GitHub Repo",
@@ -34,7 +34,7 @@ const projects: Projects[] = [
     name: "Eletron-UI",
     description:
       "Design System da Eletrônica Santana que estabelece o compartilhamento de estilos e linguagem de todas as aplicações internas do grupo. Com a Eletron-UI padronizamos as interfaces e usabilidade das aplicações, garantindo uma melhor experiencia para os desenvolvedores que agora precisam de menos tempo para construir interfaces e para os usuários que agoram precisam de menos guias para navegarem nas aplicações.",
-    techs: ["React", "Storybook", "Styled-Components"],
+    techs: ["TypeScript", "React", "Storybook", "Styled-Components"],
   },
 ];
 

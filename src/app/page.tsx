@@ -121,15 +121,15 @@ export default function Home() {
                 )}
               </div>
 
-              <div className="flex items-center gap-4 border-2 border-t-0 border-dashed p-4">
-                <div className="border-foreground aspect-video h-36 rounded-md border-2 border-dashed"></div>
+              <div className="flex flex-col items-center gap-4 border-2 border-t-0 border-dashed p-4 sm:flex-row">
+                <div className="border-foreground aspect-video h-42 rounded-md border-2 border-dashed"></div>
                 <div className="flex flex-col gap-4">
                   <p className="text-pretty">{project.description}</p>
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-2">
                     {project.techs.map((tech, index) => (
                       <span
                         key={index}
-                        className="bg-foreground text-background rounded-md px-1.5 py-0.5 text-sm"
+                        className="bg-foreground text-background rounded-md px-1.5 py-0.5 text-sm text-nowrap"
                       >
                         {tech}
                       </span>
