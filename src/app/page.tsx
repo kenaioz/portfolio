@@ -1,4 +1,7 @@
+import Link from "next/link";
+
 import { techs } from "@/infos/techs";
+import { projects } from "@/infos/projects";
 
 import {
   Tooltip,
@@ -63,12 +66,12 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-8">
           {techs.map((tech, index) => (
             <div key={index}>
-              <h3 className="bg-foreground text-background px-1.5 text-xl font-bold">
-                {tech.name}
-              </h3>
+              <div className="bg-foreground text-background flex items-center gap-2 px-1.5">
+                <h3 className="text-xl font-bold">{tech.name}</h3>
+              </div>
               <div className="flex flex-wrap gap-2 border-2 border-t-0 border-dashed p-2">
                 {tech.items.map((techItem, index) => (
                   <Tooltip key={index}>
@@ -86,38 +89,56 @@ export default function Home() {
 
       <section
         id="projects"
-        className="flex flex-col gap-2 border-b-2 border-dashed pb-12"
+        className="flex flex-col gap-4 border-b-2 border-dashed pb-12"
       >
-        <h2 className="text-2xl font-bold">Projetos</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
-          velit, impedit quam inventore voluptatum modi omnis molestias dolores
-          praesentium placeat culpa enim, et ullam ducimus fuga nemo cum aut
-          exercitationem.
-        </p>
-
         <div>
-          <h3 className="bg-foreground text-background px-1.5 text-xl font-bold">
-            Tools
-          </h3>
-          <div className="flex items-center gap-4 border-2 border-dashed p-4">
-            <div className="border-foreground h-36 w-full rounded-md border-2 border-dashed"></div>
-            <div>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Maxime, incidunt est! Nesciunt, sequi nemo doloribus, quidem
-                similique enim itaque amet, excepturi consectetur eum dolore
-                dignissimos quia repellendus id numquam consequuntur?
-              </p>
-              <br />
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Maxime, incidunt est! Nesciunt, sequi nemo doloribus, quidem
-                similique enim itaque amet, excepturi consectetur eum dolore
-                dignissimos quia repellendus id numquam consequuntur?
-              </p>
+          <h2 className="text-2xl font-bold">Projetos</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
+            velit, impedit quam inventore voluptatum modi omnis molestias
+            dolores praesentium placeat culpa enim, et ullam ducimus fuga nemo
+            cum aut exercitationem.
+          </p>
+        </div>
+        <div className="flex flex-col gap-8">
+          {projects.map((project, index) => (
+            <div key={index}>
+              <div className="bg-foreground text-background flex items-center gap-2 px-1.5">
+                <h3 className="text-xl font-bold">{project.name}</h3>
+                {project.links && (
+                  <div className="flex gap-2">
+                    {project.links.map((link, index) => (
+                      <Link
+                        key={index}
+                        title={link.name}
+                        href={link.url}
+                        target="_blank"
+                      >
+                        {<link.icon />}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div className="flex items-center gap-4 border-2 border-t-0 border-dashed p-4">
+                <div className="border-foreground aspect-video h-36 rounded-md border-2 border-dashed"></div>
+                <div className="flex flex-col gap-4">
+                  <p className="text-pretty">{project.description}</p>
+                  <div className="flex gap-2">
+                    {project.techs.map((tech, index) => (
+                      <span
+                        key={index}
+                        className="bg-foreground text-background rounded-md px-1.5 py-0.5 text-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 

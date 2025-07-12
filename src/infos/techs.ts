@@ -35,6 +35,7 @@ import {
   SiPrometheus,
   SiVite,
   SiWebpack,
+  SiStorybook,
 } from "react-icons/si";
 import { FaAws, FaGolang, FaLinux } from "react-icons/fa6";
 import { GrMysql } from "react-icons/gr";
@@ -47,12 +48,12 @@ interface TechItem {
   icon: IconType;
 }
 
-type Techs = {
+interface Techs {
   name: string;
   items: TechItem[];
-}[];
+}
 
-const techs: Techs = [
+const techs: Techs[] = [
   {
     name: "Front-End",
     items: [
@@ -67,6 +68,7 @@ const techs: Techs = [
       { name: "Remix", icon: SiRemix },
       { name: "Vite", icon: SiVite },
       { name: "Webpack", icon: SiWebpack },
+      { name: "Storybook", icon: SiStorybook },
     ],
   },
   {
