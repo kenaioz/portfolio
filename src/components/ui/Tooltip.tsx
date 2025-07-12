@@ -118,7 +118,9 @@ export const TooltipTrigger = React.forwardRef<
       // The user can style the trigger based on the state
       data-state={context.open ? "open" : "closed"}
       {...context.getReferenceProps(props)}
-      className="hover:bg-foreground hover:text-background focus:bg-foreground focus:text-background inline-flex cursor-pointer items-center justify-center rounded-full p-1.5 transition-all duration-300 ease-in-out focus:outline-0"
+      className={
+        "hover:bg-foreground hover:text-background focus:bg-foreground focus:text-background inline-flex cursor-pointer items-center justify-center gap-2 rounded-full p-1.5 transition-all duration-300 ease-in-out focus:outline-0"
+      }
     >
       {children}
     </button>

@@ -9,15 +9,25 @@ import {
 export default function Home() {
   return (
     <div className="flex flex-col gap-12">
-      <div className="flex flex-wrap items-center gap-8 border-b-2 border-dashed sm:h-184">
+      <section
+        id="hero"
+        className="flex h-[40vh] flex-wrap items-center justify-center gap-2 border-b-2 border-dashed sm:h-[60vh] sm:justify-start sm:gap-8"
+      >
         <div className="border-foreground h-48 w-48 rounded-full border-2 border-dashed"></div>
         <div>
-          <h1 className="text-4xl font-bold">Silvio Cesar</h1>
-          <p className="text-midground">FullStack Developer</p>
+          <h1 className="text-center text-4xl font-bold sm:text-start">
+            Silvio Cesar
+          </h1>
+          <p className="text-midground text-center sm:text-start">
+            FullStack Developer
+          </p>
         </div>
-      </div>
+      </section>
 
-      <div className="flex flex-col gap-2 border-b-2 border-dashed pb-12">
+      <section
+        id="about_me"
+        className="flex flex-col gap-2 border-b-2 border-dashed pb-12"
+      >
         <h2 className="text-2xl font-bold">Sobre Mim</h2>
         <p className="text-pretty">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo cum
@@ -37,85 +47,47 @@ export default function Home() {
           tenetur omnis atque quo hic quos corrupti dolore, neque accusamus!
           Iste sed animi iure.
         </p>
-      </div>
+      </section>
 
-      <div className="border-b-2 border-dashed pb-12">
-        <h2 className="text-2xl font-bold">Techs</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-          perspiciatis amet inventore neque ea eius quod animi, repudiandae
-          eligendi veritatis deleniti explicabo mollitia distinctio consequatur
-          ad nulla aliquid laboriosam at!
-        </p>
-        <br />
-        <div className="flex flex-col gap-4">
-          <div>
-            <h3 className="bg-foreground text-background px-1.5 text-xl font-bold">
-              Front-End
-            </h3>
-            <div className="flex flex-wrap border-2 border-dashed">
-              {techs.frontend.map((tech, index) => (
-                <Tooltip key={index}>
-                  <TooltipTrigger>
-                    {tech.name && <tech.icon size={24} />}
-                  </TooltipTrigger>
-                  <TooltipContent>{tech.name}</TooltipContent>
-                </Tooltip>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="bg-foreground text-background px-1.5 text-xl font-bold">
-              Back-End
-            </h3>
-            <div className="flex flex-wrap border-2 border-dashed">
-              {techs.backend.map((tech, index) => (
-                <Tooltip key={index}>
-                  <TooltipTrigger>
-                    {tech.name && <tech.icon size={24} />}
-                  </TooltipTrigger>
-                  <TooltipContent>{tech.name}</TooltipContent>
-                </Tooltip>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="bg-foreground text-background px-1.5 text-xl font-bold">
-              Databases
-            </h3>
-            <div className="flex flex-wrap border-2 border-dashed">
-              {techs.database.map((tech, index) => (
-                <Tooltip key={index}>
-                  <TooltipTrigger>
-                    {tech.name && <tech.icon size={24} />}
-                  </TooltipTrigger>
-                  <TooltipContent>{tech.name}</TooltipContent>
-                </Tooltip>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="bg-foreground text-background px-1.5 text-xl font-bold">
-              Tools
-            </h3>
-            <div className="flex flex-wrap border-2 border-dashed">
-              {techs.tools.map((tech, index) => (
-                <Tooltip key={index}>
-                  <TooltipTrigger>
-                    {tech.name && <tech.icon size={24} />}
-                  </TooltipTrigger>
-                  <TooltipContent>{tech.name}</TooltipContent>
-                </Tooltip>
-              ))}
-            </div>
-          </div>
+      <section
+        id="techs"
+        className="flex flex-col gap-4 border-b-2 border-dashed pb-12"
+      >
+        <div>
+          <h2 className="text-2xl font-bold">Techs</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+            perspiciatis amet inventore neque ea eius quod animi, repudiandae
+            eligendi veritatis deleniti explicabo mollitia distinctio
+            consequatur ad nulla aliquid laboriosam at!
+          </p>
         </div>
-      </div>
 
-      <div className="flex flex-col gap-2 border-b-2 border-dashed pb-12">
+        <div className="flex flex-col gap-4">
+          {techs.map((tech, index) => (
+            <div key={index}>
+              <h3 className="bg-foreground text-background px-1.5 text-xl font-bold">
+                {tech.name}
+              </h3>
+              <div className="flex flex-wrap gap-2 border-2 border-t-0 border-dashed p-2">
+                {tech.items.map((techItem, index) => (
+                  <Tooltip key={index}>
+                    <TooltipTrigger>
+                      {techItem.icon && <techItem.icon size={24} />}
+                    </TooltipTrigger>
+                    <TooltipContent>{techItem.name}</TooltipContent>
+                  </Tooltip>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section
+        id="projects"
+        className="flex flex-col gap-2 border-b-2 border-dashed pb-12"
+      >
         <h2 className="text-2xl font-bold">Projetos</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
@@ -147,7 +119,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <div className="flex flex-col gap-2 pb-12">
         <h2 className="text-2xl font-bold">Contato</h2>
