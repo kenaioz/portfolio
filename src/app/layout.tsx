@@ -3,8 +3,9 @@ import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 import { ThemeSwitcher } from "@/components/ui/ThemeSwitcher";
-
 import { ThemeProvider } from "next-themes";
+
+import { me } from "@/infos/me";
 
 const jetBrainsMono = JetBrains_Mono({
   variable: "--jetbrains-mono",
@@ -43,8 +44,8 @@ export default function RootLayout({
           <main className="p-8">{children}</main>
 
           <footer className="bg-foreground text-background flex items-center justify-between px-8 py-4">
-            <p>Footer</p>
-            <p>Teste</p>
+            <p>Feito por {me.name}</p>
+            <p>{me.job_description}</p>
           </footer>
         </ThemeProvider>
       </body>

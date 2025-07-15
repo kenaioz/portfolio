@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { me } from "@/infos/me";
 import { techs } from "@/infos/techs";
 import { projects } from "@/infos/projects";
 
@@ -8,6 +9,9 @@ import {
   TooltipTrigger,
   TooltipContent,
 } from "@/components/ui/Tooltip";
+
+import { IoIosMail } from "react-icons/io";
+import { FaLinkedin, FaGithub } from "react-icons/fa6";
 
 export default function Home() {
   return (
@@ -19,10 +23,10 @@ export default function Home() {
         <div className="border-foreground h-48 w-48 rounded-full border-2 border-dashed"></div>
         <div>
           <h1 className="text-center text-4xl font-bold sm:text-start">
-            Silvio Cesar
+            {me.name}
           </h1>
           <p className="text-midground text-center sm:text-start">
-            FullStack Developer
+            {me.job_description}
           </p>
         </div>
       </section>
@@ -142,49 +146,42 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="flex flex-col gap-2 pb-12">
+      <section id="contact" className="flex flex-col gap-2 pb-12">
         <h2 className="text-2xl font-bold">Contato</h2>
-        <div className="flex w-1/2 flex-col gap-4">
-          <label htmlFor="name">
-            <input
-              id="name"
-              type="text"
-              placeholder="Seu nome"
-              autoComplete="given-name"
-              className="border-foreground w-full border-b-2 p-1.5 focus:outline-0"
-            />
-          </label>
-
-          <label htmlFor="email">
-            <input
-              id="email"
-              type="email"
-              placeholder="Email para retorno"
-              autoComplete="email"
-              className="border-foreground w-full border-b-2 p-1.5 focus:outline-0"
-            />
-          </label>
-
-          <label htmlFor="subject">
-            <input
-              id="subject"
-              type="text"
-              placeholder="Assunto do email"
-              autoComplete="off"
-              className="border-foreground w-full border-b-2 p-1.5 focus:outline-0"
-            />
-          </label>
-
-          <label htmlFor="body">
-            <textarea
-              id="body"
-              placeholder="Corpo do email"
-              autoComplete="off"
-              className="border-foreground h-32 w-full resize-none border-b-2 p-1.5 focus:outline-0"
-            />
-          </label>
+        <div className="flex flex-col gap-4">
+          <p>
+            Para dúvidas, conexões profissionais ou apenas para um bate papo,
+            entre em contato por e-mail ou pelas redes sociais.{" "}
+            <b>Vamos conversar</b>.
+          </p>
+          <div className="flex gap-2">
+            <Link
+              href={me.contacts.email}
+              target="_blank"
+              className="bg-foreground text-background hover:bg-midground focus:bg-foreground focus:text-background align-text-center flex w-fit cursor-pointer items-center gap-2 rounded-md p-1.5 px-4 text-center transition-all duration-300 ease-in-out"
+            >
+              <IoIosMail />
+              Entrar em contato
+            </Link>
+            {me.social.map((item) => (
+              <Link
+                key={item.title}
+                href={item.url}
+                target="_blank"
+                className="bg-foreground text-background hover:bg-midground focus:bg-foreground focus:text-background align-text-center flex w-fit cursor-pointer items-center gap-2 rounded-md p-1.5 px-4 text-center transition-all duration-300 ease-in-out"
+                aria-label={item.title}
+              >
+                {item.title === "Linkedin" ? (
+                  <FaLinkedin size={20} />
+                ) : (
+                  <FaGithub />
+                )}
+                {item.title}
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
