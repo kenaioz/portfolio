@@ -1,7 +1,9 @@
 interface Me {
   name: string;
   job_description: string;
-  contacts: { email: string; phone: string };
+  contacts: {
+    email: string;
+  };
   social: {
     title: string;
     url: string;
@@ -17,7 +19,6 @@ const me: Me = {
   job_description: "FullStack Developer",
   contacts: {
     email: "silvio.kenaioz@gmail.com",
-    phone: "+55 11951376356",
   },
   social: [
     {
